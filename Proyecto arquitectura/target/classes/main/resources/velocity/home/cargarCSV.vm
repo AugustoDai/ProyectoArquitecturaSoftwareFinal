@@ -1,0 +1,58 @@
+<style>
+table, th, td {
+  border: 1px solid green;
+  padding: 5px;
+  text-align:center;
+
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+</style>
+
+<header>
+    
+</header>
+<body>
+	<ul>
+	  <li><a class="active" href="http://localhost:4567/">Inicio</a></li>
+	  <li><a href="http://localhost:4567/cargarArchivoDeCDRs">Cargar Archivo de CDRs</a></li>
+	  <li><a href="http://localhost:4567/usuarios"> Usuarios </a></li>
+	  <li><a href="http://localhost:4567/CDRs">Tarificar</a></li>
+	  <li><a href="http://localhost:4567/recuperarTarificacion">Recuperar Tarificacion</a></li>
+	  <li><a href="http://localhost:4567/configuracion">Configuracion</a></li>
+	</ul>
+	<form action="http://localhost:4567/cargarArchivoCSV">
+    	<label>Ruta del archivo de Usuarios:</label><br>
+    	<input type="text" id="RutaArchivoUsuarios" name="RutaArchivoUsuarios"><br><br>
+    	<label>Ruta del archivo de CDRS:</label><br>
+    	<input type="text" id="RutaArchivoCDRs" name="RutaArchivoCDRs"><br><br>
+    	<input type="submit" value="Cargar" >
+    	<input type="hidden" id="JDB" name="Persistencia" value="Serializacion">
+    </form>
+</body>

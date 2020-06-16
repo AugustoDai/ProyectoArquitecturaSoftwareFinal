@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FACTURA</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    
+    <div class="media">
+        <div class="col-8"><h1><a href=" "><img alt="" src="data:image/png;base64,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" /> </a></h1></div>
+        <div class="col-4 text-right">
+            <h1>FACTURA</h1>
+            <h1><small>Factura N001</small></h1>
+        </div>
+    </div>
+    <hr>
+    <div>
+        </pre> 
+        <div class="media">
+            <div class="col-8">
+                <div class="card border-light mb-3" style="margin-left: 20px; margin-top: 5px; max-width: 18rem;">
+                    <div class="card-header">
+                        <h4> <strong>De:</strong> Nuevatel PCS de Bolivia S.A.</h4>
+                    </div>
+                    <div class="card-body">
+                    <p class="card-text">
+                        <strong>Direccion:</strong>
+                        Av. Santa Cruz, Cochabamba</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 ">
+                <div class="card border-light mb-3" style="margin-left: 30px; margin-top: 5px; max-width: 21rem;">
+                    <div class="card-header">
+                        <h4><strong>Para : </strong>{{nombre}}</h4>
+                    </div>
+                    <div class="card-body">
+                    <p class="card-text">
+                        <strong>Ci :</strong>
+                        {{ci}}                       
+                    </p>
+                    <p>
+                        <strong>Numero Telefonico: </strong>
+                        {{numeroTelefonico}}
+                    </p>
+                    <p>
+                        <strong>Fecha:</strong>
+                        {{fecha}} 
+                    </p>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </div>
+    <div>
+        </pre>
+        <table class="table table-bordered">
+        <thead>
+        <tr>
+        <th>
+        <h4>Servicio</h4>
+        </th>
+        <th>
+        <h4>Descripcion</h4>
+        </th>
+        <th>
+        <h4>Plan</h4>
+        </th>
+        <th>
+        <h4>Fecha</h4>
+        </th>
+        <th>
+        <h4>Total</h4>
+        </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>Llamadas</td>
+        <td>Llamadas registradas durante el mes.</td>
+        <td class=" text-right ">{{plan}}</td>
+        <td class=" text-right ">{{fecha}}</td>
+        <td class=" text-right ">{{montoAPagar}}</td>
+        </tr>
+        </tbody>
+        </table>
+        <pre>
+    </div>
+
+    
+    <div class="media">
+        <div class="col-xs-12 col-sm-6 col-md-8"></div>
+        <div class="col-xs-6 col-md-4">
+        </pre>
+        <div class="media text-right">
+        <div class="col-md-3 col-md-offset-3">
+            <strong>
+            Total:
+            </strong>
+        </div>
+        <div class="col-md-4 col-md-offset-4">
+            <strong>
+            {{montoAPagar}}
+            </strong>
+        </div>
+        </div>
+        <pre>
+        </div>
+    </div>
+
+    
+    
+</body>
+</html>

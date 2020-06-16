@@ -1,0 +1,101 @@
+<style>
+table {
+  width:100%;
+}
+table, th, td {
+  border: 1px solid green;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+table#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+ background-color: #fff;
+}
+table#t01 th {
+  background-color: green;
+  color: white;
+}
+h2{
+  margin-left: 45%;
+  color: green;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+</style>
+
+<header>
+    
+</header>
+<body>
+	<ul>
+	  <li><a class="active" href="http://localhost:4567/">Inicio</a></li>
+	  <li><a href="http://localhost:4567/cargarArchivoDeCDRs">Cargar Archivo de CDRs</a></li>
+	  <li><a href="http://localhost:4567/usuarios"> Usuarios </a></li>
+	  <li><a href="http://localhost:4567/CDRs">Tarificar</a></li>	  
+	  <li><a href="http://localhost:4567/recuperarTarificacion">Recuperar Tarificacion</a></li>
+	  <li><a href="http://localhost:4567/configuracion">Configuracion</a></li>
+	</ul>
+
+    <h2>Lista de Usuarios</h2>
+    <h2>Cantidad de Usuarios: $usuarios.size()</h2>
+    <table id="t01">
+      <tr>
+        <th>Nombre</th>
+        <th>CI</th>
+        <th>Numero de Telefono</th>
+        <th>Plan</th> 
+        <th>Tarifa</th>
+        <th>Mejores Amigos</th>
+        
+      </tr>
+      #foreach($usuario in $usuarios)
+      <tr>
+            <td>$usuario.getNombre()</td>
+            <td>$usuario.getCi()</td>
+            <td>$usuario.getNumeroTelefonoMovil()</td>
+            <td>$usuario.getPlan().getTipoDePlan()</td>
+            <td>$usuario.getTarifacion().getTipoDeTarifacion()</td>
+			
+			#if($usuario.getPlan().getTipoDePlan() == "WOW")
+				<td>$usuario.getPlan().getNumeroAmigosParaString()</td>
+			#else
+				<td>Sin Numeros Amigos</td>
+			#end
+            
+      </tr>
+      #end
+     </table>
+     <script>
+     	
+     </script>
+</body>

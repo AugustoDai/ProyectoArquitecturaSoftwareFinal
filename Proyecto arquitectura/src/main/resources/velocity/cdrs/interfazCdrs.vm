@@ -1,0 +1,119 @@
+<style>
+table {
+  width:100%;
+}
+table, th, td {
+  border: 1px solid green;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+table#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+ background-color: #fff;
+}
+table#t01 th {
+  background-color: green;
+  color: white;
+}
+h2{
+  margin-left: 47%;
+  color: green;
+}
+.button {
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  margin-left: 50%;
+}
+
+.button1 {
+  background-color: #4CAF50; 
+  color: black; 
+  border: 2px solid green;
+}
+
+.button1:hover {
+  background-color: white;
+  color: green;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+</style>
+
+<header>
+    
+</header>
+<body>
+
+	<ul>
+	  <li><a class="active" href="http://localhost:4567/">Inicio</a></li>
+	  <li><a href="http://localhost:4567/cargarArchivoDeCDRs">Cargar Archivo de CDRs</a></li>
+	  <li><a href="http://localhost:4567/usuarios"> Usuarios </a></li>
+	  <li><a href="http://localhost:4567/CDRs">Tarificar</a></li>	  
+	  <li><a href="http://localhost:4567/recuperarTarificacion">Recuperar Tarificacion</a></li>
+	  <li><a href="http://localhost:4567/configuracion">Configuracion</a></li>
+	</ul>
+	
+    <h2>Lista de CDRs</h2>
+    
+	<h2>Cantidad de CDRs: $CDRs.size()</h2>
+    <table id="t01">
+      <tr>
+        <th>Telefono Origen</th>
+        <th>Telefono Destino</th>
+        <th>Fecha</th>
+        <th>Hora Inicio Llamada</th> 
+        <th>Costo</th>
+        
+      </tr>
+      #foreach($CDR in $CDRs)
+      <tr>
+            <td>$CDR.getTelefonoOrigen()</td>
+            <td>$CDR.getTelefonoDestino()</td>
+            <td>$CDR.getFecha()</td>
+            <td>$CDR.getHora()</td>
+            <td>$CDR.getCosto()</td>
+      </tr>
+      #end
+     </table>
+     <a href="http://localhost:4567/tarifar"><button class="button button1">Tarifar</button></a>
+     <a href="http://localhost:4567/guardarTarifa"><button class="button button1">Guardar</button></a>
+</body>

@@ -1,0 +1,69 @@
+<style>
+table, th, td {
+  border: 1px solid green;
+  padding: 5px;
+  text-align:center;
+
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+</style>
+
+<header>
+	
+</header>
+<body>
+	<ul>
+	  <li><a class="active" href="http://localhost:4567/">Inicio</a></li>
+	  <li><a href="http://localhost:4567/cargarArchivoDeCDRs">Cargar Archivo de CDRs</a></li>
+	  <li><a href="http://localhost:4567/usuarios"> Usuarios </a></li>  
+	  <li><a href="http://localhost:4567/CDRs">Tarificar</a></li>
+	  <li><a href="http://localhost:4567/recuperarTarificacion">Recuperar Tarificacion</a></li>
+	  <li><a href="http://localhost:4567/configuracion">Configuracion</a></li>
+	</ul>
+	
+	<p>Usuario:</p>
+    <form action="/facturar" method="get">
+      <input type="text" list="listaDeUsuarios" name="listaDeUsuarios"> 
+      <datalist id="listaDeUsuarios">
+      	#foreach($usuario in $usuarios)
+      		<option value=$usuario.getNombre()>
+	  	#end
+      </datalist>
+      
+      <label for="fecha">Fecha:</label>
+	  <input type="date" id="fecha" name="fecha">
+	  
+      <input type="submit" value="confirm">
+    </form>
+	  
+ 
+    
+	
+</body>
